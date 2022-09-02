@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders homepage unchanged 1`] = `
+<div>
+  <h1>
+    Pokémon TCG APP
+  </h1>
+  <p>
+    Location: 
+    pt-BR
+  </p>
+  <div>
+    <button
+      type="button"
+    >
+      Toggle location
+    </button>
+  </div>
+  <div
+    style="margin-top: 25px;"
+  >
+    <a
+      href="/about"
+    >
+      About
+    </a>
+  </div>
+  <div
+    style="margin-top: 25px;"
+  >
+    <button
+      type="button"
+    >
+      Toggle state
+    </button>
+  </div>
+</div>
+`;

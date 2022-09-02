@@ -1,0 +1,24 @@
+{
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "prefer-const": "warn",
+    "no-duplicate-imports": "error",
+    "camelcase": "warn",
+    "eqeqeq": "warn",
+    "prefer-destructuring": "warn",
+    "react/button-has-type": "warn",
+    "react/react-in-jsx-scope": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error"
+  }
+}

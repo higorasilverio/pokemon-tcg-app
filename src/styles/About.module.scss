@@ -1,0 +1,19 @@
+@import 'mixins';
+
+$color-primary: #8a2be2;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.content {
+  color: $color-primary;
+}
+
+@include desktop() {
+  .container {
+    border: 1px solid red;
+  }
+}
