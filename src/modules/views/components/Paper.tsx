@@ -1,14 +1,8 @@
+import { ReactNode } from 'react'
 import styles from '../../../styles/Paper.module.scss'
-import { Card } from '../../models/Card'
-import { cardMock } from '../mock/cardMock'
-import Summary from './Summary'
 
-const Paper = () => {
-  return (
-    <div className={styles.paper}>
-      <Summary data={new Card(cardMock)} />
-    </div>
-  )
+const Paper = ({ children }: { children: ReactNode }) => {
+  return <div className={styles.paper}>{children}</div>
 }
 
 export default Paper

@@ -6,13 +6,11 @@ export class Card {
   #hdImageUrl: string
 
   constructor(json: any) {
-    const { data } = json
-
-    this.#id = data.id
-    this.#name = data.name
-    this.#types = data.types
-    this.#ldImageUrl = data.images.small
-    this.#hdImageUrl = data.images.large
+    this.#id = json.id
+    this.#name = json.name
+    this.#types = json.types
+    this.#ldImageUrl = json.images.small
+    this.#hdImageUrl = json.images.large
   }
 
   get id() {
