@@ -1,0 +1,15 @@
+$background-src: url('/assets/background.webp');
+
+.layout {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: $background-src;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
