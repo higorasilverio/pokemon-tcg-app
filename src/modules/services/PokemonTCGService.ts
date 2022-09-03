@@ -6,4 +6,10 @@ export class PokemonTCGService extends AxiosHttpClient {
 
     return data
   }
+
+  async getOne(id: string) {
+    const { data } = await this.instance.get(`cards/${id}`)
+
+    return data
+  }
 }
