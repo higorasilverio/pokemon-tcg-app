@@ -1,14 +1,22 @@
 import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolkit'
-import alertReducer from './slices/alertSlice'
+import cardsReducer from './slices/cardsSlice'
 
 const rootReducer = combineReducers({
-  alert: alertReducer
+  cards: cardsReducer
 })
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {
   const store = configureStore({
     reducer: rootReducer,
-    preloadedState
+    preloadedState,
+    middleware: getDefaultMiddleware =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: ['cards/setCards'],
+          ignoredActionPaths: ['payload', 'cards.cards'],
+          ignoredPaths: ['cards.cards']
+        }
+      })
   })
 
   return store

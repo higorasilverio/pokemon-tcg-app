@@ -16,6 +16,7 @@ const Summary = memo(({ data }: { data: Card }) => {
           layout="responsive"
           width="100%"
           height="100%"
+          priority
         />
       </div>
       <div className={styles.info}>

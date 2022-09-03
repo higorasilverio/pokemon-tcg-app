@@ -25,8 +25,8 @@ export class Card {
     this.#id = json.id
     this.#name = json.name
     this.#types = json.types
-    this.#ldImageUrl = json.images.small
-    this.#hdImageUrl = json.images.large
+    this.#ldImageUrl = json.images?.small
+    this.#hdImageUrl = json.images?.large
     this.#resistances = json.resistances
     this.#weaknesses = json.weaknesses
     this.#attacks = json.attacks
@@ -45,7 +45,7 @@ export class Card {
   }
 
   get types() {
-    return this.#types.join(', ')
+    return Array.isArray(this.#types) ? this.#types.join(', ') : ''
   }
 
   get ldImageUrl() {
