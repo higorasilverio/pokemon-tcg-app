@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Card } from '../../models/Card'
 import { getCardById } from '../../useCases/getCardById'
+import Detail from '../components/Detail'
+import DetailPaper from '../components/DetailPaper'
 import Layout from '../components/Layout'
-import Paper from '../components/Paper'
 import Search from '../components/Search'
-import Summary from '../components/Summary'
 
 const CardContainer = () => {
   const [card, setCard] = useState<Card>()
@@ -20,7 +20,7 @@ const CardContainer = () => {
   return (
     <Layout>
       <Search />
-      <Paper>{card?.id ? <Summary data={card} /> : null}</Paper>
+      <DetailPaper>{card?.id ? <Detail data={card} /> : null}</DetailPaper>
     </Layout>
   )
 }

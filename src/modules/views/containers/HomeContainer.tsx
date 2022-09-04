@@ -3,9 +3,9 @@ import { useCallback, useEffect } from 'react'
 import useAppData from '../../../hooks/useAppData'
 import { getSomeCards } from '../../useCases/getSomeCards'
 import Layout from '../components/Layout'
-import Paper from '../components/Paper'
 import Search from '../components/Search'
 import Summary from '../components/Summary'
+import SummaryPaper from '../components/SummaryPaper'
 
 const HomeContainer = () => {
   const { cards, handleCards } = useAppData()
@@ -21,7 +21,7 @@ const HomeContainer = () => {
   return (
     <Layout>
       <Search />
-      <Paper>{renderSummaries()}</Paper>
+      <SummaryPaper>{renderSummaries()}</SummaryPaper>
     </Layout>
   )
 }
