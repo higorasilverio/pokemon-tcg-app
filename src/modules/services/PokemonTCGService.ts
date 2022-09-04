@@ -2,8 +2,8 @@ import { Card } from '../models/Card'
 import { AxiosHttpClient } from './AxiosHttpClient'
 
 export class PokemonTCGService extends AxiosHttpClient {
-  async getAll() {
-    const { data } = await this.instance.get('cards')
+  async getSome() {
+    const { data } = await this.instance.get('cards?orderBy=name&q=rarity:LEGEND')
     const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
 
     return cardsData
@@ -11,8 +11,7 @@ export class PokemonTCGService extends AxiosHttpClient {
 
   async getOne(id: string) {
     const { data } = await this.instance.get(`cards/${id}`)
-
-    const cardData: Card = new Card(data)
+    const cardData: Card = new Card(data.data)
 
     return cardData
   }

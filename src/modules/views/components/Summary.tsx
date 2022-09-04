@@ -1,11 +1,18 @@
 import Image from 'next/image'
-import { memo } from 'react'
+import { useRouter } from 'next/router'
+import { memo, useCallback } from 'react'
 import styles from '../../../styles/Summary.module.scss'
 import { Card } from '../../models/Card'
 
 const Summary = memo(({ data }: { data: Card }) => {
+  const router = useRouter()
+
+  const handleClick = useCallback(() => {
+    router.push(`/${data.id}`)
+  }, [data, router])
+
   return (
-    <div className={styles.summary} onClick={() => alert(data.name)}>
+    <div className={styles.summary} onClick={handleClick}>
       <div className={styles.info}>
         <h3>{data.name}</h3>
       </div>

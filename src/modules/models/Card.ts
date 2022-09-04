@@ -32,10 +32,6 @@ export class Card {
     this.#attacks = json.attacks
   }
 
-  static emptyCard() {
-    return new Card({})
-  }
-
   get id() {
     return this.#id
   }
