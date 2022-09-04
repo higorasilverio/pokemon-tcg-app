@@ -3,7 +3,9 @@ import { AxiosHttpClient } from './AxiosHttpClient'
 
 export class PokemonTCGService extends AxiosHttpClient {
   async getSome() {
-    const { data } = await this.instance.get('cards?orderBy=name&q=rarity:LEGEND')
+    const { data } = await this.instance.get(
+      `cards?orderBy=name&q=supertype:Pokémon${' '}rarity:LEGEND`
+    )
     const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
 
     return cardsData
@@ -17,7 +19,9 @@ export class PokemonTCGService extends AxiosHttpClient {
   }
 
   async getByName(search: string) {
-    const { data } = await this.instance.get(`cards?orderBy=name&q=name:*${search}*`)
+    const { data } = await this.instance.get(
+      `cards?orderBy=name&q=supertype:Pokémon${' '}name:*${search}*`
+    )
     const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
 
     return cardsData
