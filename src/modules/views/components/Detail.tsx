@@ -4,9 +4,11 @@ import styles from '../../../styles/Detail.module.scss'
 import { Card } from '../../models/Card'
 import DownIcon from '../icons/DownIcon'
 import UpIcon from '../icons/UpIcon'
+import Modal from './Modal'
 
 const Detail = ({ data }: { data: Card }) => {
-  const [src, setSrc] = useState(data.hdImageUrl)
+  const [src, setSrc] = useState<string>(data.hdImageUrl)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
     <div className={styles.detail}>
@@ -43,10 +45,11 @@ const Detail = ({ data }: { data: Card }) => {
             </div>
           </div>
         </div>
-        <button type="button" onClick={() => alert(JSON.stringify(data.attacks))}>
+        <button type="button" onClick={() => setIsOpen(true)}>
           Attacks
         </button>
       </div>
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} data={data.attacks} />
     </div>
   )
 }
