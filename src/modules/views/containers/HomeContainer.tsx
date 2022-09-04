@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
-import { Card } from '../../models/Card'
+import { isEmpty } from 'lodash'
+import { useCallback, useEffect } from 'react'
+import useAppData from '../../../hooks/useAppData'
 import { getSomeCards } from '../../useCases/getSomeCards'
 import Layout from '../components/Layout'
 import Paper from '../components/Paper'
@@ -7,14 +8,14 @@ import Search from '../components/Search'
 import Summary from '../components/Summary'
 
 const HomeContainer = () => {
-  const [cards, setCards] = useState<Card[]>()
+  const { cards, handleCards } = useAppData()
 
   useEffect(() => {
-    getSomeCards().then(response => setCards(response))
-  }, [])
+    if (isEmpty(cards) && handleCards) getSomeCards().then(response => handleCards(response))
+  }, [handleCards, cards])
 
   const renderSummaries = useCallback(() => {
-    return cards ? cards.map(card => <Summary key={card.id} data={card} />) : null
+    return isEmpty(cards) ? null : cards?.map(card => <Summary key={card.id} data={card} />)
   }, [cards])
 
   return (

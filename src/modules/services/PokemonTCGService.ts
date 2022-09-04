@@ -4,7 +4,7 @@ import { AxiosHttpClient } from './AxiosHttpClient'
 export class PokemonTCGService extends AxiosHttpClient {
   async getSome() {
     const { data } = await this.instance.get(
-      `cards?orderBy=name&q=supertype:Pokémon${' '}rarity:LEGEND`
+      `cards?orderBy=name&q=supertype:Pokémon${' '}name:Ash's`
     )
     const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
 
