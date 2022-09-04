@@ -36,6 +36,8 @@ type ModalProps = {
   data: AttackProperties[]
 }
 
+ReactModal.setAppElement('#__next')
+
 const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
   const closeModal = () => setIsOpen(false)
 

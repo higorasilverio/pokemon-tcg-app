@@ -7,20 +7,29 @@ import HomeIcon from '../icons/HomeIcon'
 import SearchIcon from '../icons/SearchIcon'
 
 const Search = () => {
-  const { handleCards } = useAppData()
+  const { handleCards, loading, loaded, isLoading } = useAppData()
 
   const [search, setSearch] = useState<string>('')
 
   const router = useRouter()
 
   const handleSearch = useCallback(() => {
-    if (!search) router.push('/')
-    if (search && handleCards)
+    loading && loading()
+
+    if (!search) {
+      loaded && loaded()
+      router.push('/')
+    }
+
+    if (search)
       getCardsByName(search)
-        .then(cards => handleCards(cards))
+        .then(cards => handleCards && handleCards(cards))
         .then(() => setSearch(''))
-        .finally(() => router.push('/'))
-  }, [search, handleCards, router])
+        .finally(() => {
+          loaded && loaded()
+          router.push('/')
+        })
+  }, [loading, search, loaded, router, handleCards])
 
   return (
     <div className={styles.search}>
@@ -31,8 +40,9 @@ const Search = () => {
         id="search"
         value={search}
         onChange={e => setSearch(e.target.value)}
+        disabled={isLoading}
       />
-      <button type="button" onClick={handleSearch}>
+      <button type="button" onClick={() => handleSearch()} disabled={isLoading}>
         {search ? <SearchIcon /> : <HomeIcon />}
       </button>
     </div>
