@@ -15,4 +15,11 @@ export class PokemonTCGService extends AxiosHttpClient {
 
     return cardData
   }
+
+  async getByName(search: string) {
+    const { data } = await this.instance.get(`cards?orderBy=name&q=name:*${search}*`)
+    const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
+
+    return cardsData
+  }
 }
