@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useState } from 'react'
 import styles from '../../../styles/Summary.module.scss'
 import { Card } from '../../models/Card'
 
 const Summary = memo(({ data }: { data: Card }) => {
+  const [src, setSrc] = useState(data.ldImageUrl)
+
   const router = useRouter()
 
   const handleClick = useCallback(() => {
@@ -18,12 +20,15 @@ const Summary = memo(({ data }: { data: Card }) => {
       </div>
       <div className={styles.image}>
         <Image
-          src={data.ldImageUrl}
-          alt="card preview"
+          src={src}
+          alt={`${data.name} pokemon card preview`}
           layout="responsive"
           width="100%"
           height="100%"
           priority
+          placeholder="blur"
+          blurDataURL="/assets/what-pokemon.webp"
+          onError={() => setSrc('/assets/what-pokemon.webp')}
         />
       </div>
       <div className={styles.info}>
