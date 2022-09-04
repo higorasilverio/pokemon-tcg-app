@@ -1,0 +1,87 @@
+@import 'mixins';
+
+.name {
+  margin-bottom: 0.5rem;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h3 {
+    color: #000;
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    border-bottom: 1px solid red;
+  }
+}
+
+.attack {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.damage {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 500px;
+  b {
+    color: #f00;
+  }
+}
+
+.description {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  background-color: #3b3b3b;
+  color: #fff;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  font-size: 0.9rem;
+  margin: 0 auto;
+}
+
+.btn {
+  position: fixed;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  top: 0.2rem;
+  right: 0.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+@include tablets() {
+  .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

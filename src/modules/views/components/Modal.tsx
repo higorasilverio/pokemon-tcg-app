@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import ReactModal from 'react-modal'
+import styles from '../../../styles/Modal.module.scss'
 
 const customStyles = {
   content: {
@@ -9,14 +10,15 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    maxWidth: '90vw',
-    minHeight: '50vh',
+    width: '90vw',
+    maxWidth: '600px',
     borderRadius: '1rem',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
     backgroundColor: '#3b3b3b',
-    color: '#fff'
+    color: '#fff',
+    position: 'relative',
+    paddingTop: '2rem'
   }
 }
 
@@ -46,18 +48,24 @@ const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
     >
       <div>
         {data.map(attack => (
-          <div key={attack.name} style={{ marginBottom: '1rem' }}>
-            <h3>{attack.name}</h3>
-            <div>
-              Energy Cost: {attack.convertedEnergyCost} ({attack.cost?.join(', ')})
+          <div key={attack.name} className={styles.attack}>
+            <div className={styles.name}>
+              <h3>{attack.name}</h3>
             </div>
-            <div>Damage: {attack.damage}</div>
-            <div>{attack.text}</div>
+            <div className={styles.damage}>
+              <span className={styles.control}>
+                <b>Damage:</b> {attack.damage || 'None'}
+              </span>
+              <span className={styles.control}>
+                <b>Energy Cost:</b> {attack.convertedEnergyCost} ({attack.cost?.join(', ')})
+              </span>
+            </div>
+            {attack.text && <div className={styles.description}>{attack.text}</div>}
           </div>
         ))}
       </div>
-      <button type="button" onClick={closeModal}>
-        close
+      <button className={styles.btn} type="button" onClick={closeModal}>
+        x
       </button>
     </ReactModal>
   )
