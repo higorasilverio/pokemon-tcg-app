@@ -28,6 +28,16 @@ To run this project locally, follow the steps below:
 5. Run `npm run dev` to run the project in development mode or `npm run build` and `npm run start` to run the final build;
 6. In your internet browser, access `http://localhost:3000/` to interact with the application.
 
+### Unit Test
+
+With the project on your machine and with the dependencies installed, run `npm run test` to check the unit tests.
+
+### e2e Test
+
+With the project on your machine and with the dependencies installed, run `npm run build` and `npm run start`.
+
+On other terminal, run `npm run cypress`, to check the e2e tests.
+
 ### Deploy
 
 This project is deployed with [Vercel](https://vercel.com/), available [here](https://pokemon-tcg-app-alpha.vercel.app/).
