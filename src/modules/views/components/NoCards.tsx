@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const NoCards = () => {
   return (
-    <div className={styles.nocard}>
+    <div className={styles.nocard} data-cy="no-card">
       <div className={styles.text}>
         <h3>Not found...</h3>
       </div>

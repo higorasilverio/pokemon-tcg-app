@@ -14,7 +14,7 @@ const Summary = memo(({ data }: { data: Card }) => {
   }, [data, router])
 
   return (
-    <div className={styles.summary} onClick={handleClick}>
+    <div className={styles.summary} onClick={handleClick} data-cy="summary">
       <div className={styles.info}>
         <h3>{data.name}</h3>
       </div>

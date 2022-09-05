@@ -41,8 +41,14 @@ const Search = () => {
         value={search}
         onChange={e => setSearch(e.target.value)}
         disabled={isLoading}
+        data-cy="search-input"
       />
-      <button type="button" onClick={() => handleSearch()} disabled={isLoading}>
+      <button
+        type="button"
+        onClick={() => handleSearch()}
+        disabled={isLoading}
+        data-cy="search-button"
+      >
         {search ? <SearchIcon /> : <HomeIcon />}
       </button>
     </div>

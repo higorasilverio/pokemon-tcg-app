@@ -45,7 +45,7 @@ const Detail = ({ data }: { data: Card }) => {
             </div>
           </div>
         </div>
-        <button type="button" onClick={() => setIsOpen(true)}>
+        <button type="button" onClick={() => setIsOpen(true)} data-cy="attacks-button">
           Attacks
         </button>
       </div>

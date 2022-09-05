@@ -51,7 +51,7 @@ const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
     >
       <div>
         {data.map(attack => (
-          <div key={attack.name} className={styles.attack}>
+          <div key={attack.name} className={styles.attack} data-cy="attack-card">
             <div className={styles.name}>
               <h3>{attack.name}</h3>
             </div>
@@ -68,7 +68,7 @@ const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
           </div>
         ))}
       </div>
-      <button className={styles.btn} type="button" onClick={closeModal}>
+      <button className={styles.btn} type="button" onClick={closeModal} data-cy="close-button">
         x
       </button>
     </ReactModal>
