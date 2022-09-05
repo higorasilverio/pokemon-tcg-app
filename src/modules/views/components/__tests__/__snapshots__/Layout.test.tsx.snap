@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders unchanged 1`] = `
+<div>
+  <div
+    class="layout"
+    data-cy="layout"
+  >
+    Test
+  </div>
+</div>
+`;
