@@ -1,33 +1,34 @@
 @import 'mixins';
+@import 'variables';
 
 .search {
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 0.5rem;
-  gap: 0.5rem;
+  width: $full;
+  padding: $half-r;
+  gap: $half-r;
 
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(0.33rem);
-  -webkit-backdrop-filter: blur(0.33rem);
+  background: $dark-soft;
+  box-shadow: 0 $quarter-r $double-r rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur($quarter-r);
+  -webkit-backdrop-filter: blur($quarter-r);
 
   label {
-    color: #fff;
+    color: $white;
     font-size: 1.3rem;
   }
 
   input {
     font-size: 1.3rem;
-    padding: 0.2rem 0.5rem;
+    padding: $quarter-r $half-r;
     outline: none;
-    border-radius: 0.5rem;
+    border-radius: $half-r;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: $dark-soft;
     width: 12rem;
 
     &:hover {
@@ -47,8 +48,8 @@
   button {
     font-size: 1.3rem;
     outline: none;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
+    padding: 0.3rem $half-r;
+    border-radius: $half-r;
     border: none;
     background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;

@@ -1,28 +1,29 @@
 @import 'mixins';
+@import 'variables';
 
 .name {
-  margin-bottom: 0.5rem;
+  margin-bottom: $half-r;
 
-  width: 100%;
+  width: $full;
   display: flex;
   justify-content: center;
   text-align: center;
 
   h3 {
-    color: #000;
+    color: $black;
     margin: 0;
     font-size: 1.2rem;
     font-style: italic;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid $strong-red;
   }
 }
 
 .attack {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  background-color: #fff;
-  color: #000;
-  border-radius: 0.5rem;
+  margin-bottom: $half-r;
+  padding: $half-r;
+  background-color: $white;
+  color: $black;
+  border-radius: $half-r;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,47 +33,47 @@
 .damage {
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem 0;
-  width: 100%;
-  max-width: 500px;
+  margin: $half-r 0;
+  width: $full;
+  max-width: 31rem;
   b {
-    color: #f00;
+    color: $strong-red;
   }
 }
 
 .description {
-  width: 100%;
+  width: $full;
   display: grid;
   justify-items: center;
-  background-color: #3b3b3b;
-  color: #fff;
-  padding: 0.5rem 0.25rem;
-  border-radius: 0.5rem;
+  background-color: $dark-color;
+  color: $white;
+  padding: $half-r $quarter-r;
+  border-radius: $half-r;
   text-align: center;
-  width: 100%;
-  max-width: 500px;
+  width: $full;
+  max-width: 31rem;
   font-size: 0.9rem;
   margin: 0 auto;
 }
 
 .btn {
   position: fixed;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: $full-half-r;
+  height: $full-half-r;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: $half;
   top: 0.2rem;
   right: 0.1rem;
   background-color: transparent;
   border: none;
-  margin: 0 0.5rem;
-  color: #fff;
+  margin: 0 $half-r;
+  color: $white;
   font-size: 1.2rem;
   &:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: $white;
+    color: $black;
   }
 }
 

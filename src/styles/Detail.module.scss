@@ -1,31 +1,32 @@
 @import 'mixins';
+@import 'variables';
 
 .detail {
-  width: 100%;
-  height: 100%;
+  width: $full;
+  height: $full;
 
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 1fr;
-  column-gap: 2rem;
+  grid-template-rows: $frame;
+  column-gap: $double-r;
   align-items: center;
   justify-items: center;
 }
 
 .image {
-  width: 100%;
-  max-width: 480px;
+  width: $full;
+  max-width: 30rem;
 }
 
 .info {
-  width: 100%;
+  width: $full;
   max-width: 40vw;
-  height: 350px;
-  padding: 2rem;
+  height: 22rem;
+  padding: $double-r;
 
-  border-radius: 1rem;
-  border: 0.05rem solid rgba(255, 255, 255, 0.3);
-  background-color: #3b3b3b;
+  border-radius: $full-r;
+  border: 1px solid $dark-soft;
+  background-color: $dark-color;
 
   display: flex;
   flex-direction: column;
@@ -33,31 +34,31 @@
   justify-content: space-evenly;
 
   button {
-    margin: 0.5rem 0;
+    margin: $half-r 0;
     font-size: 1.3rem;
     outline: none;
-    border-radius: 1rem;
+    border-radius: $full-r;
     border: none;
-    background-color: rgba(255, 255, 255);
+    background-color: #fff;
     cursor: pointer;
     display: flex;
-    padding: 1rem 5rem;
+    padding: $full-r 5rem;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      background-color: #ff8000;
-      color: #fff;
+      background-color: $orange;
+      color: $white;
     }
   }
 }
 
 .header {
-  width: 100%;
-  padding: 0.5rem 0;
+  width: $full;
+  padding: $half-r 0;
 
-  color: #fff;
-  border-radius: 1rem;
+  color: $white;
+  border-radius: $full-r;
   text-align: center;
 
   display: flex;
@@ -76,10 +77,10 @@
 }
 
 .fighting {
-  width: 100%;
+  width: $full;
 
-  background-color: #fff;
-  border-radius: 1rem;
+  background-color: $white;
+  border-radius: $full-r;
 
   display: flex;
   flex-direction: column;
@@ -88,28 +89,28 @@
 
   .weak,
   .resistant {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    border-radius: 1rem;
+    width: $full;
+    padding: $half-r $full-r;
+    margin: $half-r;
+    border-radius: $full-r;
     display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 0.5rem;
+    grid-template-columns: auto $frame;
+    column-gap: $half-r;
     justify-items: center;
     align-items: center;
   }
 
   .resistant {
-    background-color: #d2ffd2;
+    background-color: $soft-green;
   }
 
   .weak {
-    background-color: #ffbfbf;
+    background-color: $soft-red;
   }
 }
 
 .feat {
-  width: 100%;
+  width: $full;
   display: flex;
 }
 
@@ -126,16 +127,16 @@
   }
 
   .image {
-    width: 280px;
+    width: 17.5rem;
   }
 
   .info {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    max-width: 90%;
+    margin-top: $half-r;
+    padding: $half-r;
+    max-width: $ninety;
 
     button {
-      padding: 0.5rem 2rem;
+      padding: $half-r $double-r;
     }
   }
 
@@ -146,7 +147,7 @@
     justify-content: center;
 
     h2 {
-      font-size: 1.5rem;
+      font-size: $full-half-r;
       margin: 0;
     }
 
@@ -156,22 +157,22 @@
   }
 
   .types > h3 {
-    margin-top: 0.5rem;
+    margin-top: $half-r;
   }
 }
 
 @include tablets() {
   .image {
-    width: 200px;
+    width: 12.5rem;
   }
 
   .info {
-    max-width: 100%;
+    max-width: $full;
   }
   .types {
     h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
+      font-size: $full-r;
+      margin-bottom: $half-r;
     }
   }
 
@@ -182,12 +183,12 @@
     overflow: hidden;
     .weak,
     .resistant {
-      width: 100%;
+      width: $full;
       margin: 0;
       border-radius: 0;
       display: flex;
       justify-content: center;
-      font-size: 1rem;
+      font-size: $full-r;
     }
   }
 }
@@ -195,7 +196,7 @@
 @include small-devices() {
   .header {
     h2 {
-      font-size: 1.2rem;
+      font-size: 1$double-r;
     }
   }
 }

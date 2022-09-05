@@ -1,11 +1,12 @@
 @import 'mixins';
+@import 'variables';
 
 .summary {
   width: 12rem;
   height: 18rem;
 
-  background-color: #fff;
-  border-radius: 1rem;
+  background-color: $white;
+  border-radius: $full-r;
 
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
 
   h3 {
     margin: 0;
-    width: 90%;
+    width: $ninety;
     min-height: 2.8rem;
 
     text-align: center;
@@ -25,24 +26,24 @@
     display: grid;
     place-items: center;
 
-    background-color: #3b3b3b;
-    color: #fff;
-    border-radius: 1rem;
+    background-color: $dark-color;
+    color: $white;
+    border-radius: $full-r;
   }
 
   h4 {
-    margin: 0.1rem;
+    margin: 0$full-r;
   }
 
   h4.id {
     text-align: center;
     font-size: 0.85rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: $half-r;
   }
 
   h4.types {
-    width: 90%;
-    padding: 0.3rem 0;
+    width: $ninety;
+    padding: $quarter-r 0;
 
     display: flex;
     align-items: center;
@@ -51,15 +52,15 @@
     text-align: center;
     font-size: 0.85rem;
 
-    background-color: #c5c5c5;
-    color: #000;
-    border-radius: 0.5rem;
+    background-color: $soft-green;
+    color: $black;
+    border-radius: $half-r;
   }
   &:hover {
     .image {
       @include keyframes(grow) {
         0% {
-          padding: 0.5rem 1rem;
+          padding: $half-r $full-r;
         }
         100% {
           padding: 0.3rem 0.8rem;
@@ -71,12 +72,12 @@
 }
 
 .image {
-  width: 100%;
-  padding: 0.5rem 1rem;
+  width: $full;
+  padding: $half-r $full-r;
 }
 
 .info {
-  width: 100%;
+  width: $full;
 
   display: flex;
   justify-content: center;

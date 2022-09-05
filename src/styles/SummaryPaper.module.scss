@@ -1,21 +1,23 @@
+@import 'variables';
+
 .paper {
-  height: 80vh;
-  width: 80vw;
-  padding: 0.5rem;
+  height: $eighty-h;
+  width: $eighty-w;
+  padding: $half-r;
   overflow-y: auto;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   grid-template-rows: auto;
-  column-gap: 0.5rem;
-  row-gap: 1rem;
+  column-gap: $half-r;
+  row-gap: $full-r;
   place-items: center;
   justify-items: center;
 
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(0.33rem);
-  -webkit-backdrop-filter: blur(0.33rem);
-  border: 0.05rem solid rgba(255, 255, 255, 0.3);
+  background: $dark-soft;
+  border-radius: $full-r;
+  box-shadow: 0 $quarter-r $double-r rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur($quarter-r);
+  -webkit-backdrop-filter: blur($quarter-r);
+  border: 1px solid $dark-soft;
 }

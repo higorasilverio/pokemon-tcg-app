@@ -1,24 +1,26 @@
+@import 'variables';
+
 .nocard {
-  height: 80vh;
-  width: 80vw;
+  height: $eighty-h;
+  width: $eighty-w;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(0.33rem);
-  -webkit-backdrop-filter: blur(0.33rem);
-  border: 0.05rem solid rgba(255, 255, 255, 0.3);
+  background: $dark-soft;
+  border-radius: $full-r;
+  box-shadow: 0 $quarter-r $double-r rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur($quarter-r);
+  -webkit-backdrop-filter: blur($quarter-r);
+  border: 1px solid $dark-soft;
 }
 
 .text {
-  background-color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
+  background-color: $white;
+  padding: $half-r $double-r;
+  border-radius: $half-r;
 
   h3 {
     margin: 0;
