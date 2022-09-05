@@ -24,9 +24,9 @@ const Search = () => {
     if (search)
       getCardsByName(search)
         .then(cards => handleCards && handleCards(cards))
-        .then(() => setSearch(''))
         .finally(() => {
           loaded && loaded()
+          setSearch('')
           router.push('/')
         })
   }, [loading, search, loaded, router, handleCards])

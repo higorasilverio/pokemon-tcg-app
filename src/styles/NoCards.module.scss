@@ -1,0 +1,26 @@
+.nocard {
+  height: 80vh;
+  width: 80vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.33rem);
+  -webkit-backdrop-filter: blur(0.33rem);
+  border: 0.05rem solid rgba(255, 255, 255, 0.3);
+}
+
+.text {
+  background-color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+
+  h3 {
+    margin: 0;
+  }
+}

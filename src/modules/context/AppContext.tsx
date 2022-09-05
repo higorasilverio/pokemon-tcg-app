@@ -12,7 +12,7 @@ type AppContextProps = {
 const AppContext = createContext<AppContextProps>({})
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [cards, setCards] = useState<Card[]>([])
+  const [cards, setCards] = useState<Card[] | undefined>(undefined)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const handleCards = useCallback((cards: Card[]) => {

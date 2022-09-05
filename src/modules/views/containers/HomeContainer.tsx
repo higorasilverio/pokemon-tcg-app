@@ -4,6 +4,7 @@ import useAppData from '../../../hooks/useAppData'
 import { getSomeCards } from '../../useCases/getSomeCards'
 import Layout from '../components/Layout'
 import Loading from '../components/Loading'
+import NoCards from '../components/NoCards'
 import Search from '../components/Search'
 import Summary from '../components/Summary'
 import SummaryPaper from '../components/SummaryPaper'
@@ -16,7 +17,7 @@ const HomeContainer = () => {
   useEffect(() => {
     loading && loading()
 
-    if (isEmpty(cards))
+    if (cards === undefined)
       getSomeCards()
         .then(response => handleCards && handleCards(response))
         .finally(() => loaded && loaded())
@@ -24,13 +25,21 @@ const HomeContainer = () => {
   }, [handleCards, cards, loading, loaded])
 
   const renderSummaries = useCallback(() => {
-    return isEmpty(cards) ? null : cards?.map(card => <Summary key={card.id} data={card} />)
+    if (isEmpty(cards)) return <NoCards />
+
+    return (
+      <SummaryPaper>
+        {cards?.map(card => (
+          <Summary key={card.id} data={card} />
+        ))}
+      </SummaryPaper>
+    )
   }, [cards])
 
   return (
     <Layout>
       <Search />
-      {isLoading ? <Loading /> : <SummaryPaper>{renderSummaries()}</SummaryPaper>}
+      {isLoading ? <Loading /> : renderSummaries()}
     </Layout>
   )
 }
