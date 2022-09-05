@@ -61,7 +61,7 @@ const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
               </span>
               <span className={styles.control}>
                 <b>Energy Cost:</b> {attack.convertedEnergyCost}
-                {isEmpty(attack.cost) ? '' : ` ( ${attack.cost?.join(', ')} )`}
+                {isEmpty(attack.cost) ? '' : ` (${attack.cost?.join(', ')})`}
               </span>
             </div>
             {attack.text && <div className={styles.description}>{attack.text}</div>}
