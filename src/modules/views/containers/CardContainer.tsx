@@ -1,13 +1,13 @@
+import Detail from '@/components/Detail'
+import DetailPaper from '@/components/DetailPaper'
+import Layout from '@/components/Layout'
+import Loading from '@/components/Loading'
+import Search from '@/components/Search'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import useAppData from '../../../hooks/useAppData'
 import { Card } from '../../models/Card'
 import { getCardById } from '../../useCases/getCardById'
-import Detail from '../components/Detail'
-import DetailPaper from '../components/DetailPaper'
-import Layout from '../components/Layout'
-import Loading from '../components/Loading'
-import Search from '../components/Search'
 
 const CardContainer = () => {
   const { isLoading, loading, loaded, cards } = useAppData()

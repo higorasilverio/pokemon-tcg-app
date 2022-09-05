@@ -1,5 +1,5 @@
+import HomeContainer from '@/containers/HomeContainer'
 import type { NextPage } from 'next'
-import HomeContainer from '../modules/views/containers/HomeContainer'
 
 const Home: NextPage = () => <HomeContainer />
 

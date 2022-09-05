@@ -1,4 +1,4 @@
-import { Card } from '../models/Card'
+import { Card } from '@/models/Card'
 import { AxiosHttpClient } from './AxiosHttpClient'
 
 export class PokemonTCGService extends AxiosHttpClient {

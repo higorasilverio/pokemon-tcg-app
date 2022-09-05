@@ -1,5 +1,5 @@
+import { Card } from '@/models/Card'
 import { createContext, ReactNode, useCallback, useState } from 'react'
-import { Card } from '../models/Card'
 
 type AppContextProps = {
   cards?: Card[]

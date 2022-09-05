@@ -1,8 +1,8 @@
+import { Card } from '@/models/Card'
+import styles from '@/styles/Summary.module.scss'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { memo, useCallback, useState } from 'react'
-import styles from '../../../styles/Summary.module.scss'
-import { Card } from '../../models/Card'
 
 const Summary = memo(({ data }: { data: Card }) => {
   const [src, setSrc] = useState(data.ldImageUrl)

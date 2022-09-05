@@ -1,10 +1,10 @@
+import useAppData from '@/hooks/useAppData'
+import styles from '@/styles/Search.module.scss'
+import { getCardsByName } from '@/useCases/getCardsByName'
 import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
-import useAppData from '../../../hooks/useAppData'
-import styles from '../../../styles/Search.module.scss'
-import { getCardsByName } from '../../useCases/getCardsByName'
-import HomeIcon from '../icons/HomeIcon'
-import SearchIcon from '../icons/SearchIcon'
+import HomeIcon from './icons/HomeIcon'
+import SearchIcon from './icons/SearchIcon'
 
 const Search = () => {
   const { handleCards, loading, loaded, isLoading } = useAppData()

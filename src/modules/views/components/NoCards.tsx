@@ -1,6 +1,6 @@
+import * as nocard from '@/assets/not-found.gif'
+import styles from '@/styles/NoCards.module.scss'
 import Image from 'next/image'
-import * as nocard from '../../../../public/assets/not-found.gif'
-import styles from '../../../styles/NoCards.module.scss'
 
 const NoCards = () => {
   return (

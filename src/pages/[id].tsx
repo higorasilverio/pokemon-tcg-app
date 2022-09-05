@@ -1,5 +1,5 @@
+import CardContainer from '@/containers/CardContainer'
 import type { NextPage } from 'next'
-import CardContainer from '../modules/views/containers/CardContainer'
 
 const Home: NextPage = () => <CardContainer />
 

@@ -1,5 +1,5 @@
-import { Card } from '../models/Card'
-import { PokemonTCGService } from '../services/PokemonTCGService'
+import { Card } from '@/models/Card'
+import { PokemonTCGService } from '@/services/PokemonTCGService'
 
 export const getCardById = async (id: string): Promise<Card> => {
   const service = new PokemonTCGService()

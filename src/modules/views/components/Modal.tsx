@@ -1,7 +1,7 @@
+import styles from '@/styles/Modal.module.scss'
 import { isEmpty } from 'lodash'
 import { Dispatch, SetStateAction } from 'react'
 import ReactModal from 'react-modal'
-import styles from '../../../styles/Modal.module.scss'
 
 const customStyles = {
   content: {

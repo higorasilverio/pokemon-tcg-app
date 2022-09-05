@@ -1,9 +1,9 @@
+import { Card } from '@/models/Card'
+import styles from '@/styles/Detail.module.scss'
 import Image from 'next/image'
 import { useState } from 'react'
-import styles from '../../../styles/Detail.module.scss'
-import { Card } from '../../models/Card'
-import DownIcon from '../icons/DownIcon'
-import UpIcon from '../icons/UpIcon'
+import DownIcon from './icons/DownIcon'
+import UpIcon from './icons/UpIcon'
 import Modal from './Modal'
 
 const Detail = ({ data }: { data: Card }) => {

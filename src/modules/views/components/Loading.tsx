@@ -1,6 +1,6 @@
+import * as loadingGif from '@/assets/loading.gif'
+import styles from '@/styles/Loading.module.scss'
 import Image from 'next/image'
-import * as loadingGif from '../../../../public/assets/loading.gif'
-import styles from '../../../styles/Loading.module.scss'
 
 const Loading = () => {
   return (
