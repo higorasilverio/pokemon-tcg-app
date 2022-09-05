@@ -10,7 +10,7 @@ export class PokemonTCGService extends AxiosHttpClient {
   }
 
   async getSome() {
-    const { data } = await this.instance.get(`${this.#queryString}Ash's`)
+    const { data } = await this.instance.get(`${this.#queryString}Pikachu`)
     const cardsData: Card[] = data.data.map((_data: any) => new Card(_data))
 
     return cardsData
