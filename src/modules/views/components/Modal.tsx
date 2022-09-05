@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash'
 import { Dispatch, SetStateAction } from 'react'
 import ReactModal from 'react-modal'
 import styles from '../../../styles/Modal.module.scss'
@@ -59,7 +60,8 @@ const Modal = ({ isOpen, setIsOpen, data }: ModalProps) => {
                 <b>Damage:</b> {attack.damage || 'None'}
               </span>
               <span className={styles.control}>
-                <b>Energy Cost:</b> {attack.convertedEnergyCost} ({attack.cost?.join(', ')})
+                <b>Energy Cost:</b> {attack.convertedEnergyCost}
+                {isEmpty(attack.cost) ? '' : ` ( ${attack.cost?.join(', ')} )`}
               </span>
             </div>
             {attack.text && <div className={styles.description}>{attack.text}</div>}
